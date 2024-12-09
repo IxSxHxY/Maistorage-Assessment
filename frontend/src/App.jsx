@@ -9,7 +9,12 @@ import Pagination from './components/pagination';
 import Swal from 'sweetalert2';
 import "./App.css";
 
-let baseUrl = 'http://localhost:3000';
+// require('dotenv').config();
+
+//import {} from 'dotenv'
+//dotenv.config({path: ".env"})
+
+let baseUrl = `http://${process.env.BACKEND_ADD}:${process.env.BACKEND_PORT}`;
 
 const App = () => {
   const [items, setItems] = useState([]);
