@@ -151,7 +151,7 @@ const searchItems = async (req, res) => {
 
     // Find items where the name or category matches the search query (case-insensitive)
     const items = await sequelize.query(
-      `SELECT * FROM Items WHERE LOWER(item_name) LIKE :searchQuery OR LOWER(category) LIKE :searchQuery`,
+      `SELECT * FROM items WHERE LOWER(item_name) LIKE :searchQuery OR LOWER(category) LIKE :searchQuery`,
       {
         replacements: { searchQuery: `%${searchQuery}%` },
         type: QueryTypes.SELECT
